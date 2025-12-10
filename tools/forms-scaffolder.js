@@ -146,7 +146,7 @@ function createComponentFiles(componentName, baseComponent, targetDir) {
  * Decorates a custom form field component
  * @param {HTMLElement} fieldDiv - The DOM element containing the field wrapper. Refer to the documentation for its structure for each component.
  * @param {Object} fieldJson - The form json object for the component.
- * @param {HTMLElement} parentElement - The parent element of the field.
+ * @param {HTMLElement} parentElement - The parent container element of the field.
  * @param {string} formId - The unique identifier of the form.
  */
 export default async function decorate(fieldDiv, fieldJson, parentElement, formId) {
@@ -154,6 +154,8 @@ export default async function decorate(fieldDiv, fieldJson, parentElement, formI
   
   // TODO: Implement your custom component logic here
   // You can access the field properties via fieldJson.properties
+  // You can access the parent container via parentElement
+  // You can access the form ID via formId
   
   return fieldDiv;
 }
@@ -170,27 +172,27 @@ export default async function decorate(fieldDiv, fieldJson, parentElement, formI
     const baseComponentPath = path.join(__dirname, '../blocks/form/models/form-components', baseComponent.filename);
     const baseJson = JSON.parse(readFileSync(baseComponentPath, 'utf-8'));
 
-    // Function to transform relative paths for components
-    const transformPaths = (obj) => {
-      if (Array.isArray(obj)) {
-        return obj.map(transformPaths);
-      }
-      if (obj && typeof obj === 'object') {
-        const transformed = {};
-        for (const [key, value] of Object.entries(obj)) {
-          if (key === '...' && typeof value === 'string') {
-            // Transform relative paths from base components to components directory
-            // From: ../form-common/file.json (base component path)
-            // To: ../../models/form-common/file.json (component path)
-            transformed[key] = value.replace(/^\.\.\/form-common\//, '../../models/form-common/');
-          } else {
-            transformed[key] = transformPaths(value);
+            // Function to transform relative paths for components
+        const transformPaths = (obj) => {
+          if (Array.isArray(obj)) {
+            return obj.map(transformPaths);
           }
-        }
-        return transformed;
-      }
-      return obj;
-    };
+          if (obj && typeof obj === 'object') {
+            const transformed = {};
+            for (const [key, value] of Object.entries(obj)) {
+              if (key === '...' && typeof value === 'string') {
+                // Transform relative paths from base components to components directory
+                // From: ../form-common/file.json (base component path)
+                // To: ../../models/form-common/file.json (component path)
+                transformed[key] = value.replace(/^\.\.\/form-common\//, '../../models/form-common/');
+              } else {
+                transformed[key] = transformPaths(value);
+              }
+            }
+            return transformed;
+          }
+          return obj;
+        };
 
     // Modify the base component configuration
     const customJson = {

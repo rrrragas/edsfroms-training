@@ -1,5 +1,5 @@
 const textIntersectionClass = 'tnc__text-intersect';
-const textDecorationClass = 'tnc-text-decoration';
+const textDecorationClass = 'tnc__text-decoration';
 
 class TermsAndConditions {
   constructor(fieldDiv, fieldJson) {
