@@ -53,6 +53,27 @@
                     "name": "textContent_ctaText",
                     "label": "CTA label",
                     "valueType": "string"
+                },
+                {
+                    "component": "multiselect",
+                    "name": "classes",
+                    "value": [],
+                    "label": "Teaser options",
+                    "valueType": "array",
+                    "options": [
+                        {
+                            "name": "Side-by-side",
+                            "value": "side-by-side"
+                        },
+                        {
+                            "name": "Image on left",
+                            "value": "left"
+                        },
+                        {
+                            "name": "Image on right",
+                            "value": "right"
+                        }
+                    ]
                 }
             ]
         }
