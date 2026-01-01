@@ -56,12 +56,16 @@
         "fragment",
         "form",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "embed-adaptive-form"
 >>>>>>> 5aac670 (Initial commit)
 =======
         "embed-adaptive-form",
         "teaser"
 >>>>>>> 0ca7ef0 (Add teaser block JSON files so it is available in Universal Editor)
+=======
+        "embed-adaptive-form"
+>>>>>>> 897a22f (replaced eds fomrs code with aem-boilerplate-forms-ws code)
       ]
     }
   ]

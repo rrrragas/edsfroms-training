@@ -10,5 +10,8 @@ scripts/editor-support-rte.js
 tools/forms-scaffolder.js
 tools/update-mappings.js
 /test
+<<<<<<< HEAD
 >>>>>>> 5aac670 (Initial commit)
 dompurify.min.js
+=======
+>>>>>>> 897a22f (replaced eds fomrs code with aem-boilerplate-forms-ws code)

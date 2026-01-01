@@ -34,9 +34,9 @@ jobs:
         run: | 
           rm -rf \
             .github/workflows/cleanup-on-create.yaml \
-            .renovaterc.json \
             CHANGELOG.md
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       - name: Remove Form Development Files
@@ -54,6 +54,8 @@ jobs:
           rm -rf package.json package-lock.json  
 
 >>>>>>> 5aac670 (Initial commit)
+=======
+>>>>>>> 897a22f (replaced eds fomrs code with aem-boilerplate-forms-ws code)
       - name: Initialize README
         # replace {repo} and {owner} with the actual values
         run: |

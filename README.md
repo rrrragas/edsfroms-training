@@ -75,6 +75,7 @@ This will guide you through creating a new custom component with:
 - Interactive prompts for component name and base type
 - Automatic file generation (JS, CSS, JSON)
 - Automatic integration in form block with mappings
+<<<<<<< HEAD
 
 
 ## Updating Runtime Core
@@ -114,3 +115,5 @@ The AEM Forms runtime core libraries (`@aemforms/af-core` and `@aemforms/af-form
 5. **Verify the Update**
    - Check that files in `blocks/form/rules/model/` have been updated
 >>>>>>> 5aac670 (Initial commit)
+=======
+>>>>>>> 897a22f (replaced eds fomrs code with aem-boilerplate-forms-ws code)

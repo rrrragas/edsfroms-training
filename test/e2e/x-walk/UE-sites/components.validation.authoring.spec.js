@@ -7,7 +7,7 @@ const universalEditorBase = new UniversalEditorBase();
 const componentName = 'Text Input';
 const component = 'textinput';
 
-test.describe('Forms Authoring in Universal Editor tests', () => {
+test.describe.skip('Forms Authoring in Universal Editor tests', () => {
   const testURL = 'https://author-p133911-e1313554.adobeaemcloud.com/ui#/@formsinternal01/aem/universal-editor/canvas/author-p133911-e1313554.adobeaemcloud.com/content/aem-boilerplate-forms-xwalk-collaterals/componentValidation.html';
   let frame, iframe, properties, componentPathInUE;
 
@@ -29,7 +29,7 @@ test.describe('Forms Authoring in Universal Editor tests', () => {
     }
     await page.reload();
     await componentUtils.verifyAndClickContentTree(frame);
-    await expect(frame.locator('div[data-testid="right-rail"] h3:text-is("Content tree")')).toBeVisible({ timeout: 8000 });
+    await expect(frame.locator(universalEditorBase.selectors.panelHeaders)).toHaveText('Content tree');
 
     try {
       await componentPathInUE.first().waitFor({ state: 'visible', timeout: 10000 });

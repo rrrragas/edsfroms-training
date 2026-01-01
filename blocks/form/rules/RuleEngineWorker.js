@@ -44,10 +44,6 @@ export default class RuleEngine {
   getFieldChanges() {
     return this.fieldChanges;
   }
-
-  getCustomFunctionsPath() {
-    return this.form?.properties?.customFunctionsPath || '../functions.js';
-  }
 }
 
 let ruleEngine; let initPayload;
@@ -99,9 +95,7 @@ onmessage = async (e) => {
   }
 
   if (!customFunctionRegistered) {
-    const codeBasePath = e?.data?.codeBasePath;
-    const customFunctionPath = e?.data?.payload?.properties?.customFunctionsPath;
-    registerCustomFunctions(customFunctionPath, codeBasePath).then(() => {
+    registerCustomFunctions().then(() => {
       customFunctionRegistered = true;
       handleMessageEvent(e);
     });
